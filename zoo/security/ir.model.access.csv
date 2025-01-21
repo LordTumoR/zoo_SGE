@@ -1,0 +1,4 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"acces_zoo","zoo group_user","model_zoo","base.group_user",1,1,1,1
+"acces_animal","animal group_user","model_animal","base.group_user",1,1,1,1
+"acces_especie","especie group_user","model_especie","base.group_user",1,1,1,1
