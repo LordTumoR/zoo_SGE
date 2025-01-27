@@ -7,10 +7,10 @@ class Especie(models.Model):
     _description = "Especie del Zoo"
     
     nom_vulgar = fields.Char(required = True)
-    description = fields.Char()
+    descripcio = fields.Char()
     perill = fields.Selection([('alt', 'Alt'), ('baix', 'Baix'), ('mitja','Mitja'),('inofensiu','Inofensiu')])
-    perill_extincio = fields.Boolean()
-    nom_cientific = fields.Char()
-    Familia = fields.Char()
+    perill_extincio = fields.Boolean(default = False)
+    nom_cientific = fields.Char(required = True)
+    Familia = fields.Char(required = True)
     #camp a relacionar
     #animal = fields.One2many('animal', 'especie', string='Animal')

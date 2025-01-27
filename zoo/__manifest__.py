@@ -5,6 +5,10 @@
     'application': True,
     'data': [
         'security/ir.model.access.csv',
+        'views/zoo_views.xml',
+        'views/animals_views.xml',
+        'views/especie_views.xml',
+        'views/zoo_menus.xml',
     ],
     "images": ["static/description/icon.png"],
 }
