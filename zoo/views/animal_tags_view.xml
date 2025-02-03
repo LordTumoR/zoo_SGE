@@ -1,0 +1,14 @@
+<odoo>
+    <record id="tag_mammal" model="animal.tag">
+        <field name="name">Mamifero</field>
+        <field name="color">1</field>
+    </record>
+    <record id="tag_reptile" model="animal.tag">
+        <field name="name">Reptil</field>
+        <field name="color">2</field>
+    </record>
+    <record id="tag_Oviparo" model="animal.tag">
+        <field name="name">Oviparo</field>
+        <field name="color">3</field>
+    </record>
+</odoo>

@@ -2,3 +2,4 @@
 "acces_zoo","zoo group_user","model_zoo","base.group_user",1,1,1,1
 "acces_animal","animal group_user","model_animal","base.group_user",1,1,1,1
 "acces_especie","especie group_user","model_especie","base.group_user",1,1,1,1
+"acces_animal_tag","animal_tag group_user","model_animal_tag","base.group_user",1,1,1,1

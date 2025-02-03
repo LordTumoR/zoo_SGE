@@ -5,13 +5,63 @@
         <field name="res_model">animal</field>
         <field name="view_mode">list,form</field>
     </record>
+
     <record id="animal_view_tree" model="ir.ui.view">
         <field name="name">animal.tree</field>
         <field name="model">animal</field>
         <field name="arch" type="xml">
-            <tree string="Channel">
+            <tree string="Animals">
                 <field name="raza" string="Raza"/>
+                <field name="continent_origen" string="Continent origen"/>
+                <field name="data_naix" string="Data naiximent"/>
+                <field name="Genere" string="Genere"/>
+                <field name="especie" string="Especie"/>
+                <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}" string="Tags"/>
             </tree>
         </field>
     </record>
+
+    <record id="animal_view_form" model="ir.ui.view">
+        <field name="name">animal.form</field>
+        <field name="model">animal</field>
+        <field name="arch" type="xml">
+            <form string="Animal">
+                <sheet>
+                    <h1>
+                        <field name="raza"/>
+                        <field name="name"/>
+                    </h1>
+                    <header>
+                        <field name="state" widget="statusbar" statusbar_visible="salvaje,domesticado,enpeligro"/>
+                        <button name="marcar_protejido" type="object" string="Marcar como Protejido" class="oe_highlight"/>
+                        <button name="marcar_salvaje" type="object" string="Marcar como salvaje"/>
+                    </header>
+                    <group>
+                        <group>
+                            <field name="continent_origen" string="Continent origen"/>
+                            <field name="data_naix" string="Data naiximent"/>
+                            <field name="Genere" string="Genere"/>
+                        </group>
+                        <group>
+                            <field name="especie" string="Especie"/>
+                            <field name="pais_origen" string="País d'origen"/>
+                            <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}" string="Tags"/>
+
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Details">
+                            <group>
+                                <field name="habitat" string="Habitat"/>
+                                <field name="dieta" string="Dieta"/>
+                                <field name="vidamedia" string="Vida media"/>
+                                <field name="image_1920" widget="image" string="Foto del animal"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
 </odoo>
+

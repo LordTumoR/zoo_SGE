@@ -6,11 +6,20 @@ class Zoo(models.Model):
     _description = 'Zoo Animal'
     
     grandaria = fields.Integer(string="Superficie en (m2)",)
-    nom = fields.Char(string="Name", required=True)
-    #ciutat = fields.Many2one('res.city',  string="Ciutat on s'ubica",  required=True)
+    name = fields.Char(string="Name", required=True)
+    ciutat = fields.Char(string="Ciutat")
     pais = fields.Many2one('res.country',  string="País on s'ubica",  required=True)
     #relacio
-    #zoo = fields.One2many('animal', string = "animal del zoo")
+    animal = fields.One2many('animal','zoo',string = "animal del zoo")
+    total_animals = fields.Integer(
+        string="Total de Animals",
+        compute="_compute_total_animals",
+        store=True
+    )
+    @api.depends("animal")
+    def _compute_total_animals(self):
+        for record in self:
+            record.total_animals = len(record.animal)
     @api.constrains('grandaria')
     def _check_grandaria_positive(self):
         for record in self:

@@ -5,13 +5,50 @@
         <field name="res_model">zoo</field>
         <field name="view_mode">list,form</field>
     </record>
+
     <record id="zoo_view_tree" model="ir.ui.view">
         <field name="name">zoo.tree</field>
         <field name="model">zoo</field>
         <field name="arch" type="xml">
-            <tree string="Channel">
-                <field name="nom" string="Nom"/>
+            <tree string="Zoológicos">
+                <field name="name" string="Nombre"/>
+                <field name="grandaria" string="Grandaria"/>
+                <field name="ciutat" string="Ciudad"/>
+                <field name="pais" string="País"/>
+                <field name="total_animals" string="Total de Animales"/>
             </tree>
+        </field>
+    </record>
+
+    <record id="zoo_view_form" model="ir.ui.view">
+        <field name="name">zoo.form</field>
+        <field name="model">zoo</field>
+        <field name="arch" type="xml">
+            <form string="Zoo">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" string="Nombre"/>
+                            <field name="grandaria" string="Grandaria"/>
+                        </group>
+                        <group>
+                            <field name="ciutat" string="Ciudad"/>
+                            <field name="pais" string="País"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="total_animals" string="Total de Animales" readonly="1"/>
+                    </group>
+                    <group>
+                        <field name="animal" string="Animales">
+                            <tree editable="bottom">
+                                <field name="name"/>
+                                <field name="raza"/>
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
         </field>
     </record>
 </odoo>

@@ -8,6 +8,7 @@
         'views/zoo_views.xml',
         'views/animals_views.xml',
         'views/especie_views.xml',
+        'views/animal_tags_view.xml',
         'views/zoo_menus.xml',
     ],
     "images": ["static/description/icon.png"],

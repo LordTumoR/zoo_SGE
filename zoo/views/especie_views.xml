@@ -10,7 +10,10 @@
         <field name="model">especie</field>
         <field name="arch" type="xml">
             <tree string="Channel">
-                <field name="nom_vulgar" string="Nom_vulgar"/>
+                <field name="name" string="Nom_vulgar"/>
+                <field name="descripcio" string="Descripcio"/>
+                <field name="perill" string="Perill"/>
+                <field name="nom_cientific" string="Nom cientific"/>
             </tree>
         </field>
     </record>
