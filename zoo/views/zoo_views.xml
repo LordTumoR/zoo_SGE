@@ -39,14 +39,51 @@
                     <group>
                         <field name="total_animals" string="Total de Animales" readonly="1"/>
                     </group>
-                    <group>
-                        <field name="animal" string="Animales">
-                            <tree editable="bottom">
-                                <field name="name"/>
-                                <field name="raza"/>
-                            </tree>
-                        </field>
-                    </group>
+                    
+                    <notebook>
+                        <page string="Zonas">
+                            <field name="zona_ids" string="Zonas del Zoológico">
+                                <tree editable="bottom">
+                                    <field name="name"/>
+                                    <field name="capacitat_maxima"/>
+                                    <field name="total_animals_per_zona"/>
+                                </tree>
+                                <form>
+                                    <field name="name"/>
+                                    <field name="capacitat_maxima"/>
+                                    <field name="animals_ids"/>
+
+                                </form>
+                            </field>
+                        </page>
+
+                        <page string="Animales">
+                            <field name="animal_ids" string="Animales">
+                                <tree editable="bottom">
+                                    <field name="name"/>
+                                    <field name="raza"/>
+                                    <field name="pais_origen" string="País d'origen"/>
+                                    <field name="data_naix" string="Fecha de Nacimiento"/>
+                                    <field name="especie" string="Especie"/>
+                                </tree>
+                            </field>
+                        </page>
+                       <page string="Horarios de Alimentación">
+                            <group>
+                                <button name="action_open_calendar" type="object" string="Ver Calendario" class="oe_highlight"/>
+                                    <field name="alimentacion_ids">
+                                    <tree>
+                                        <field name="zona_id" string="Zona" />
+                                        <field name="start_time"/>
+                                        <field name="stop_time"/>
+                                    </tree>
+                                </field>
+                            </group>
+                        </page>
+                        <page string="Foto">
+                                <field name="map_foto_1920" widget="image" string="Foto del plano"/>
+                        </page>
+                </notebook>
                 </sheet>
             </form>
         </field>

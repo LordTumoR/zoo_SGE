@@ -1,0 +1,18 @@
+<odoo>
+    <record id="action_alimentacion_gantt" model="ir.actions.act_window">
+        <field name="name">Horarios de Alimentación</field>
+        <field name="res_model">alimentacion.gantt</field>
+        <field name="view_mode">calendar,tree,form</field>
+        <field name="target">current</field>
+    </record>
+
+    <record id="view_alimentacion_calendar" model="ir.ui.view">
+        <field name="name">alimentacion.gantt.calendar</field>
+        <field name="model">alimentacion.gantt</field>
+        <field name="arch" type="xml">
+            <calendar string="Horarios de Alimentación" date_start="start_time">
+                <field name="zona_id"/>
+            </calendar>
+        </field>
+    </record>
+</odoo>

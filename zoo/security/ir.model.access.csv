@@ -3,3 +3,5 @@
 "acces_animal","animal group_user","model_animal","base.group_user",1,1,1,1
 "acces_especie","especie group_user","model_especie","base.group_user",1,1,1,1
 "acces_animal_tag","animal_tag group_user","model_animal_tag","base.group_user",1,1,1,1
+"access_alimentacion_gantt","alimentacion gantt user","model_alimentacion_gantt","base.group_user",1,1,1,1
+"acces_zoo_zona","zona group_user","model_zoo_zona","base.group_user",1,1,1,1

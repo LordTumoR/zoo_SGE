@@ -28,16 +28,16 @@ class Animal(models.Model):
     ('femeni', 'Femeni')], string="Sexe")
     #relaio
     especie = fields.Many2one('especie', string="Especie", required=True)
-    zoo = fields.Many2one('zoo', string="Zoo")
+    zoo_id = fields.Many2one('zoo', string="Perteneix al Zoo")
     tag_ids = fields.Many2many('animal.tag', string="Tags", help="Etiquetes per a classificar els animals")
     image_1920 = fields.Image(string="Animal Photo")
+    zona_id = fields.Many2one('zoo.zona', string='Zona', help='Zona on viu el animal')
     state = fields.Selection([
         ('salvaje', 'Salvaje'),
-        ('domesticado', 'Domesticado'),
-        ('enpeligro', 'Enpeligro')
+        ('domesticado', 'Domesticado')
     ], string="Estado", default='salvaje', tracking=True)
     def marcar_protejido(self):
-        self.state = 'enpeligro'
+        self.state = 'domesticado'
     def marcar_salvaje(self):
         self.state = 'salvaje'
     @api.constrains('data_naix')
