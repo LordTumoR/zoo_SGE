@@ -14,10 +14,10 @@ class AlimentacionGantt(models.Model):
 
 
 
-@api.depends('start_time', 'duration')
-def _compute_stop_time(self):
-    for record in self:
-        if record.start_time and record.duration:
-            record.stop_time = record.start_time + timedelta(minutes=record.duration)
-        else:
-            record.stop_time = False
+    @api.depends('start_time', 'duration')
+    def _compute_stop_time(self):
+        for record in self:
+            if record.start_time and record.duration:
+                record.stop_time = record.start_time + timedelta(minutes=record.duration)
+            else:
+                record.stop_time = False

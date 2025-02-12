@@ -48,16 +48,15 @@
             <form string="Animal">
                 <sheet>
                     <h1>
-                        <field name="raza"/>
-                        <field name="name"/>
+                    <field name="state" widget="statusbar" statusbar_visible="vacunacion_pendiente,vacunacion_completada"/>
                     </h1>
                     <header>
-                        <field name="state" widget="statusbar" statusbar_visible="salvaje,domesticado,enpeligro"/>
-                        <button name="marcar_protejido" type="object" string="Marcar como Protejido" class="oe_highlight"/>
-                        <button name="marcar_salvaje" type="object" string="Marcar como salvaje"/>
+                        <field name="image_1920" widget="image" string="Foto del animal"/>
                     </header>
                     <group>
                         <group>
+                             <field name="raza" string="Raza:"/>
+                        <field name="name" string="Nom:"/>
                             <field name="continent_origen" string="Continent origen"/>
                             <field name="data_naix" string="Data naiximent"/>
                             <field name="Genere" string="Genere"/>
@@ -76,8 +75,13 @@
                                 <field name="habitat" string="Habitat"/>
                                 <field name="dieta" string="Dieta"/>
                                 <field name="vidamedia" string="Vida media"/>
-                                <field name="image_1920" widget="image" string="Foto del animal"/>
                             </group>
+                                                        <group>
+
+                            <button name="marcar_protejido" type="object" string="Vacunacion Pendiente" class="oe_highlight"/>
+                            <button name="marcar_salvaje" type="object" string="Vacunacion Completada"/>
+                                                    </group>
+
                         </page>
                     </notebook>
                 </sheet>

@@ -33,13 +33,13 @@ class Animal(models.Model):
     image_1920 = fields.Image(string="Animal Photo")
     zona_id = fields.Many2one('zoo.zona', string='Zona', help='Zona on viu el animal')
     state = fields.Selection([
-        ('salvaje', 'Salvaje'),
-        ('domesticado', 'Domesticado')
-    ], string="Estado", default='salvaje', tracking=True)
+        ('vacunacion_pendiente', 'Vacunacion pendiente'),
+        ('vacunacion_completada', 'Vacunacion completada')
+    ], string="Estado", default='vacunacion_pendiente', tracking=True)
     def marcar_protejido(self):
-        self.state = 'domesticado'
+        self.state = 'vacunacion_pendiente'
     def marcar_salvaje(self):
-        self.state = 'salvaje'
+        self.state = 'vacunacion_completada'
     @api.constrains('data_naix')
     def _check_date_field(self):
         for record in self:
